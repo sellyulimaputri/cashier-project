@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link " href="/dashboard-petugas">
+                    <a class="nav-link " href="/dashboard-administrator">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -72,8 +72,8 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="/dashboard-produk">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard-produk-administrator">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -98,9 +98,9 @@
                         </div>
                         <span class="nav-link-text ms-1">Produk</span>
                     </a>
-                </li> --}}
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard-pelanggan">
+                    <a class="nav-link" href="/dashboard-pelanggan-administrator">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
@@ -127,7 +127,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  " href="/dashboard-penjualan">
+                    <a class="nav-link  " href="/dashboard-penjualan-administrator">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -156,8 +156,8 @@
                         <span class="nav-link-text ms-1">Penjualan</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link  " href="/dashboard-petugas">
+                <li class="nav-item">
+                    <a class="nav-link  " href="/dashboard-petugas-administrator">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -185,7 +185,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Petugas</span>
                     </a>
-                </li> --}}
+                </li>
                 <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                 </li>
@@ -311,7 +311,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm">
-                            <a class="opacity-5 text-dark" href="javascript:;">Petugas</a>
+                            <a class="opacity-5 text-dark" href="javascript:;">Administrator</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">{{ $pageTitle }}
                         </li>

@@ -2,51 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\produk;
-use App\Models\petugas;
 use App\Models\pelanggan;
-use App\Models\penjualan;
 use Illuminate\Http\Request;
 
-class petugasController extends Controller
+class pelangganAdministratorController extends Controller
 {
+    public function dashboardPelanggan(Request $req)
+    {
+        // if (!$req->session()->has('user_id') || $req->session()->get('user_type') !== 'administrator') {
+        //     return redirect('403')->with('error', 'login terlebih dahulu');
+        // }
+        // $user_id = $req->session()->get('user_id');
+        
+        $pageTitle = 'Pelanggan';
+        $pelanggan = pelanggan::where('IsDelete',0)->paginate(100);
+        return view('administrator.pelanggan.index', compact('pageTitle'), ['pelanggan' => $pelanggan]);
+    }
     /**
      * Display a listing of the resource.
      */
-    public function dashboardPetugas(Request $req)
-    {
-        if (!$req->session()->has('user_id') || $req->session()->get('user_type') !== 'petugas') {
-            return redirect('403')->with('error', 'login terlebih dahulu');
-        }
-        $user_id = $req->session()->get('user_id');
-        
-        $pelanggan = pelanggan::where('IsDelete',0)->paginate(100);
-        $penjualan = penjualan::where('IsDelete',0)->paginate(100);
-        $produk = produk::where('IsDelete',0)->paginate(100);
-        $petugas = petugas::where('IsDelete',0)->paginate(100);
-        
-        $data = [
-            'produk' => $produk,
-            'penjualan' => $penjualan,
-            'petugas' => $petugas,
-            'pelanggan' => $pelanggan,
-        ];
-        
-        $pageTitle = 'Dashboard';
-        
-        return view('petugas.index', compact('pageTitle'), $data);
-    }
-    
     public function index()
     {
         //
     }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $pageTitle = 'Pelanggan';
+        return view('administrator.pelanggan.create', compact('pageTitle'));
     }
 
     /**

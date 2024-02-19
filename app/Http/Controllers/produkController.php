@@ -3,33 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\produk;
-use App\Models\petugas;
-use App\Models\pelanggan;
-use App\Models\penjualan;
 use Illuminate\Http\Request;
 
-class administratorController extends Controller
+class produkController extends Controller
 {
-    public function dashboardAdministrator(Request $req)
+    public function dashboardProduk(Request $req)
     {
-        if (!$req->session()->has('user_id') || $req->session()->get('user_type') !== 'administrator') {
-            return redirect('403')->with('error', 'login terlebih dahulu');
-        }
-        $pageTitle = 'Dashboard';
-        $user_id = $req->session()->get('user_id');
-        $pelanggan = pelanggan::where('IsDelete',0)->paginate(100);
-        $penjualan = penjualan::where('IsDelete',0)->paginate(100);
+        // if (!$req->session()->has('user_id') || $req->session()->get('user_type') !== 'administrator') {
+        //     return redirect('403')->with('error', 'login terlebih dahulu');
+        // }
+        // $user_id = $req->session()->get('user_id');
+        $pageTitle = 'Produk';
         $produk = produk::where('IsDelete',0)->paginate(100);
-        $petugas = petugas::where('IsDelete',0)->paginate(100);
-        
-        $data = [
-            'produk' => $produk,
-            'penjualan' => $penjualan,
-            'petugas' => $petugas,
-            'pelanggan' => $pelanggan,
-        ];
-        
-        return view('administrator.index', compact('pageTitle'), $data);
+        return view('petugas.produk.index', compact('pageTitle'), ['produk' => $produk]);
     }
     
     /**
@@ -45,7 +31,8 @@ class administratorController extends Controller
      */
     public function create()
     {
-        //
+        $pageTitle = 'Produk';
+        return view('petugas.produk.create', compact('pageTitle'));
     }
 
     /**

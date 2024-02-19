@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\Hash;
 
 class authController extends Controller
 {
+    public function logout(Request $req){
+        $req->session()->flush('user_id');
+        return redirect('/form-login');
+    }
+    
     public function formRegister(){
-        return view('register');
+        return view('auth.register');
     }
     
     public function register(Request $request)
@@ -35,7 +40,7 @@ class authController extends Controller
     }
     
     public function formLogin(){
-        return view('login');
+        return view('auth.login');
     }
 
     public function login(Request $req)
