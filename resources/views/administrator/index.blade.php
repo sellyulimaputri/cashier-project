@@ -117,10 +117,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Produk</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    $53,000
-                                    <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                    {{ $totalProdukCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Produk Terdata</span>
                                 </h5>
                             </div>
                         </div>
@@ -139,10 +139,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Penjualan</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    2,300
-                                    <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                    {{ $totalPenjualanCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Produk Terjual</span>
                                 </h5>
                             </div>
                         </div>
@@ -161,10 +161,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Petugas</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    +3,462
-                                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                    {{ $totalPetugasCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Petugas Aktif</span>
                                 </h5>
                             </div>
                         </div>
@@ -183,10 +183,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Pelanggan</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    $103,430
-                                    <span class="text-success text-sm font-weight-bolder">+5%</span>
+                                    {{ $totalPelangganCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Pelanggan Terdaftar</span>
                                 </h5>
                             </div>
                         </div>

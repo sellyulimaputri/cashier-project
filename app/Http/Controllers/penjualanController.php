@@ -55,7 +55,7 @@ class penjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

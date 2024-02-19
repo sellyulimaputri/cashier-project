@@ -28,17 +28,17 @@
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Nama Pelanggan</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="Selly Ulima Putri"
-                            name="nama-pelanggan" required>
+                            name="nama_pelanggan" required>
                     </div>
                     <div class="col-12">
                         <label for="formFile" class="form-label">Alamat Pelanggan</label>
-                        <input class="form-control" type="text" name="alamat-pelanggan"
+                        <input class="form-control" type="text" name="alamat_pelanggan"
                             placeholder="Jl.Dr.Radjiman No.480 Laweyan Solo">
                         {{-- <input class="form-control" type="file" name="foto"> --}}
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Telepon Pelanggan</label>
-                        <input type="text" class="form-control" name="telepon-pelanggan" id="inputAddress2"
+                        <input type="text" class="form-control" name="telepon_pelanggan" id="inputAddress2"
                             placeholder="098538319070">
                     </div>
                     {{-- <div class="col-md-6">

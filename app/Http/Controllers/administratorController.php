@@ -27,9 +27,31 @@ class administratorController extends Controller
             'penjualan' => $penjualan,
             'petugas' => $petugas,
             'pelanggan' => $pelanggan,
+
+            'pageTitle' => $pageTitle,
+            
+            'totalProdukCount' => produk::count(),
+            'totalPelangganCount' => pelanggan::count(),
+            'totalPenjualanCount' => penjualan::count(),
+            'totalPetugasCount' => petugas::count(),
         ];
+
+        // Mengambil jumlah data produk
+        $totalProdukCount = produk::count();
+        $totalPelangganCount = pelanggan::count();
+        $totalPenjualanCount = penjualan::count();
+        $totalpetugasCount = petugas::count();
+
         
-        return view('administrator.index', compact('pageTitle'), $data);
+        return view('administrator.index', $data);
+        
+        // $compact = [
+        //     'pageTitle',
+        //     'totalProdukCount',
+        //     'totalPelangganCount',
+        //     'totalPenjualanCount',
+        //     'totalPetugasCount',
+        // ];
     }
     
     /**

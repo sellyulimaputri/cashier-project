@@ -40,7 +40,14 @@ class produkAdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $data = new produk();
+        $data->namaProduk = $request->nama_produk;
+        $data->hargaProduk = $request->harga_produk;
+        $data->stokProduk = $request->stok_produk;
+        $data->save();
+    
+        return redirect('/dashboard-produk-administrator')->with('pesan', 'Data batik Berhasil Disimpan');
     }
 
     /**

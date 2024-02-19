@@ -40,7 +40,14 @@ class pelangganAdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $data = new pelanggan();
+        $data->namaPelanggan = $request->nama_pelanggan;
+        $data->alamatPelanggan = $request->alamat_pelanggan;
+        $data->teleponPelanggan = $request->telepon_pelanggan;
+        $data->save();
+    
+        return redirect('/dashboard-pelanggan-administrator')->with('pesan', 'Data batik Berhasil Disimpan');
     }
 
     /**

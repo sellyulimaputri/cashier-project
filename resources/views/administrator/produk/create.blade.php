@@ -28,16 +28,16 @@
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Nama Produk</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="Hembodi Garnier"
-                            name="nama-produk" required>
+                            name="nama_produk" required>
                     </div>
                     <div class="col-12">
                         <label for="formFile" class="form-label">Harga Produk</label>
-                        <input class="form-control" type="text" name="harga-produk" placeholder="20000">
+                        <input class="form-control" type="text" name="harga_produk" placeholder="20000">
                         {{-- <input class="form-control" type="file" name="foto"> --}}
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Stok Produk</label>
-                        <input type="text" class="form-control" name="stok-produk" id="inputAddress2" placeholder="400">
+                        <input type="text" class="form-control" name="stok_produk" id="inputAddress2" placeholder="400">
                     </div>
                     {{-- <div class="col-md-6">
                         <label for="inputCity" class="form-label">City</label>

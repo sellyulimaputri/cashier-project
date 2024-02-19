@@ -40,7 +40,14 @@ class petugasAdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $data = new petugas();
+        $data->namaPetugas = $request->nama_petugas;
+        $data->alamatPetugas = $request->alamat_petugas;
+        $data->teleponPetugas = $request->telepon_petugas;
+        $data->save();
+    
+        return redirect('/dashboard-petugas-administrator')->with('pesan', 'Data batik Berhasil Disimpan');
     }
 
     /**

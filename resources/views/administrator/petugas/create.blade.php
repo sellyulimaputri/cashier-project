@@ -28,17 +28,17 @@
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Nama Petugas</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="Rafinia Wijaya"
-                            name="nama-petugas" required>
+                            name="nama_petugas" required>
                     </div>
                     <div class="col-12">
                         <label for="formFile" class="form-label">Alamat Petugas</label>
-                        <input class="form-control" type="text" name="alamat-petugas"
+                        <input class="form-control" type="text" name="alamat_petugas"
                             placeholder="Royal Extension X, Jakarta">
                         {{-- <input class="form-control" type="file" name="foto"> --}}
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Telepon Petugas</label>
-                        <input type="text" class="form-control" name="telepon-petugas" id="inputAddress2"
+                        <input type="text" class="form-control" name="telepon_petugas" id="inputAddress2"
                             placeholder="089672651777">
                     </div>
                     {{-- <div class="col-md-6">
