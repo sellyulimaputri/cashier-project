@@ -108,7 +108,7 @@
 </body>
 </html> --}}
 
-@extends('partials.navbar')
+@extends('partals.navbar')
 @section('section')
     <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
