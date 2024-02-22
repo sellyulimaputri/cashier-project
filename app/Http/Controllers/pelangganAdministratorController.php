@@ -63,7 +63,9 @@ class pelangganAdministratorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pageTitle = 'Pelanggan';
+        $pelanggan = pelanggan::where('idPelanggan', $id)->first();
+        return view('administrator.pelanggan.update', compact('pageTitle'), ['pelanggan' => $pelanggan]);
     }
 
     /**
@@ -71,7 +73,20 @@ class pelangganAdministratorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        // $this->validate($request, [
+        //     'namaPelanggan' => 'required',
+        //     'alamatPelanggan' => 'required',
+        //     'teleponPelanggan' => 'required'
+        // ]);
+        
+        $data = pelanggan::where('idPelanggan', $id)->first();
+        $data->namaPelanggan = $request->nama_pelanggan;
+        $data->alamatPelanggan = $request->alamat_pelanggan;
+        $data->teleponPelanggan = $request->telepon_pelanggan;
+        $data->save();
+
+        return redirect('/dashboard-pelanggan-administrator')->with('pesan', 'Data Pelanggan Berhasil Diperbaharui');
     }
 
     /**
@@ -79,6 +94,10 @@ class pelangganAdministratorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = pelanggan::where('idPelanggan', $id)->first();
+        $data->IsDelete = 1;
+        $data->save();
+
+        return redirect('/dashboard-pelanggan-administrator')->with('success', 'Produk berhasil dihapus');
     }
 }

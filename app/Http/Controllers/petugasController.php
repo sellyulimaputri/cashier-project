@@ -24,17 +24,24 @@ class petugasController extends Controller
         $penjualan = penjualan::where('IsDelete',0)->paginate(100);
         $produk = produk::where('IsDelete',0)->paginate(100);
         $petugas = petugas::where('IsDelete',0)->paginate(100);
+        $pageTitle = 'Dashboard';
         
         $data = [
             'produk' => $produk,
             'penjualan' => $penjualan,
             'petugas' => $petugas,
             'pelanggan' => $pelanggan,
+            
+            'pageTitle' => $pageTitle,
+            
+            'totalProdukCount' => produk::where('IsDelete',0)->count(),
+            'totalPelangganCount' => pelanggan::where('IsDelete',0)->count(),
+            'totalPenjualanCount' => penjualan::where('IsDelete',0)->count(),
+            'totalPetugasCount' => petugas::where('IsDelete',0)->count(),
         ];
         
-        $pageTitle = 'Dashboard';
         
-        return view('petugas.index', compact('pageTitle'), $data);
+        return view('petugas.index', $data);
     }
     
     public function index()

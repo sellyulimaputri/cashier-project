@@ -63,7 +63,10 @@ class petugasAdministratorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $pageTitle = 'Petugas';
+        $petugas = petugas::where('idPetugas', $id)->first();
+        return view('administrator.petugas.update', compact('pageTitle'), ['petugas' => $petugas]);
     }
 
     /**
@@ -79,6 +82,10 @@ class petugasAdministratorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = petugas::where('idPetugas', $id)->first();
+        $data->IsDelete = 1;
+        $data->save();
+
+        return redirect('/dashboard-petugas-administrator')->with('success', 'Produk berhasil dihapus');
     }
 }

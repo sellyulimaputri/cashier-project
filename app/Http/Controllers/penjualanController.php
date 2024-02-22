@@ -55,7 +55,16 @@ class penjualanController extends Controller
      */
     public function store(Request $request)
     {
+        $data = new penjualan();
+        $data->tanggalPenjualan = $request->tanggal_penjualan;
+        $data->totalHarga = $request->harga_produk;
+        $data->idPelanggan = $request->id_pelanggan;
+        $data->idProduk = $request->id_produk;
+        $data->idPetugas = $request->id_petugas;
+        $data->save();
         
+    
+        return redirect('/dashboard-penjualan')->with('pesan', 'Data batik Berhasil Disimpan');
     }
 
     /**

@@ -108,7 +108,7 @@
 </body>
 </html> --}}
 
-@extends('partals.navbar')
+@extends('partials.navbar')
 @section('section')
     <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -117,10 +117,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Produk</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    $53,000
-                                    <span class="text-success text-sm font-weight-bolder">+55%</span>
+                                    {{ $totalProdukCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Produk Terdata</span>
                                 </h5>
                             </div>
                         </div>
@@ -139,10 +139,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Penjualan</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    2,300
-                                    <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                    {{ $totalPenjualanCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Produk Terjual</span>
                                 </h5>
                             </div>
                         </div>
@@ -161,10 +161,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Petugas</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    +3,462
-                                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                    {{ $totalPetugasCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Petugas Aktif</span>
                                 </h5>
                             </div>
                         </div>
@@ -183,10 +183,10 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Data Pelanggan</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    $103,430
-                                    <span class="text-success text-sm font-weight-bolder">+5%</span>
+                                    {{ $totalPelangganCount }}
+                                    <span class="text-primary text-sm font-weight-bolder">Pelanggan Terdaftar</span>
                                 </h5>
                             </div>
                         </div>
@@ -588,134 +588,7 @@
             </div>
         </div>
     </div>
-    {{-- start table penjualan --}}
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#searchInput").on("keyup", function() {
-                searchTable();
-            });
-            $("#searchBy").change(function() {
-                searchTable();
-            });
-
-            function searchTable() {
-                var input, filter, table, tr, td, i, txtValue, searchBy;
-                input = $("#searchInput").val().toUpperCase();
-                table = $(".table");
-                tr = table.find("tr");
-                searchBy = $("#searchBy").val();
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[0]; // Ganti dengan indeks kolom yang ingin dicari
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (searchBy === "name" && txtValue.toUpperCase().indexOf(input) > -1) {
-                            tr[i].style.display = "";
-                        } else if (searchBy === "category") {
-                            var category = tr[i].getElementsByTagName("td")[
-                                1]; // Ganti dengan indeks kolom kategori
-                            if (category) {
-                                var categoryValue = category.textContent || category.innerText;
-                                if (categoryValue.toUpperCase().indexOf(input) > -1) {
-                                    tr[i].style.display = "";
-                                } else {
-                                    tr[i].style.display = "none";
-                                }
-                            }
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }
-                }
-            }
-        });
-    </script>
-    <div class="row mt-4">
-        <div class="col-12">
-            <div class="card mb-4">
-                <div class="card-header pb-0" style="display: flex; justify-content: space-between; align-items: center;">
-                    <h6>Daftar Petugas</h6>
-                    {{-- <div class="d-flex">
-                        <select class="form-select me-2" id="searchBy">
-                            <option value="name" class="">Nama</option>
-                            <option value="category">Kategori</option>
-                        </select>
-                        <input type="text" class="form-control" id="searchInput" placeholder="Cari...">
-                    </div> --}}
-                    <a class="btn bg-gradient-primary mt-3 w-12 rtl-only" href="">
-                        Add Product
-                    </a>
-                </div>
-                <div class="card-body px-0 pt-0 pb-2">
-                    <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID Petugas</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Nama Petugas</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Alamat Petugas</th>
-                                    {{-- <th
-                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Status</th> --}}
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Telepon Petugas</th>
-                                    <th class="text-secondary opacity-7"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($petugas as $da)
-                                    @if ($da->IsDelete == 0)
-                                        <tr>
-                                            <td>
-                                                {{-- <div class="d-flex px-2 py-1">
-                                                    <div>
-                                                        <h6 class="mb-0 text-sm">{{ $da->idProduk }}</h6>
-                                                    </div>
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">{{ $da->namaProduk }}</h6> --}}
-                                                <p class="text-xs text-secondary mb-0">{{ $da->idPetugas }}</p>
-                                                {{-- </div>
-                                                </div> --}}
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $da->namaPetugas }}</p>
-                                                {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $da->alamatPetugas }}</p>
-                                                {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
-                                            </td>
-                                            {{-- <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">Online</span>
-                                </td> --}}
-                                            <td class="align-middle text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $da->teleponPetugas }}</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-toggle="tooltip" data-original-title="Edit user">
-                                                    Edit
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- end table --}}
+    
     <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
             <div class="card">

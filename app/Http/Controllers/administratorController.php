@@ -30,17 +30,17 @@ class administratorController extends Controller
 
             'pageTitle' => $pageTitle,
             
-            'totalProdukCount' => produk::count(),
-            'totalPelangganCount' => pelanggan::count(),
-            'totalPenjualanCount' => penjualan::count(),
-            'totalPetugasCount' => petugas::count(),
+            'totalProdukCount' => produk::where('IsDelete',0)->count(),
+            'totalPelangganCount' => pelanggan::where('IsDelete',0)->count(),
+            'totalPenjualanCount' => penjualan::where('IsDelete',0)->count(),
+            'totalPetugasCount' => petugas::where('IsDelete',0)->count(),
         ];
 
         // Mengambil jumlah data produk
-        $totalProdukCount = produk::count();
-        $totalPelangganCount = pelanggan::count();
-        $totalPenjualanCount = penjualan::count();
-        $totalpetugasCount = petugas::count();
+        // $totalProdukCount = produk::where('IsDelete',0)->count();
+        // $totalPelangganCount = pelanggan::where('IsDelete',0)->count();
+        // $totalPenjualanCount = penjualan::where('IsDelete',0)->count();
+        // $totalpetugasCount = petugas::where('IsDelete',0)->count();
 
         
         return view('administrator.index', $data);

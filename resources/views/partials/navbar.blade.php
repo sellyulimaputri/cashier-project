@@ -156,8 +156,8 @@
                         <span class="nav-link-text ms-1">Penjualan</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link  " href="/dashboard-petugas">
+                <li class="nav-item">
+                    <a class="nav-link  " href="/dashboard-galeri">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -183,13 +183,13 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Petugas</span>
+                        <span class="nav-link-text ms-1">Galeri</span>
                     </a>
-                </li> --}}
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item mt-3">
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Opsi Akun</h6>
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link  " href="../pages/profile.html">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -245,8 +245,8 @@
                         </div>
                         <span class="nav-link-text ms-1">Sign In</span>
                     </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link  " href="../pages/sign-up.html">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -276,12 +276,12 @@
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Sign Up</span>
+                        <span class="nav-link-text ms-1">Sign Out</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
-        <div class="sidenav-footer mx-3 ">
+        {{-- <div class="sidenav-footer mx-3 ">
             <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
                 <div class="full-background"
                     style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
@@ -301,7 +301,7 @@
             </div>
             <a class="btn bg-gradient-primary mt-3 w-100"
                 href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Upgrade to pro</a>
-        </div>
+        </div> --}}
     </aside>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
@@ -323,18 +323,18 @@
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
+                        {{-- <div class="input-group">
                             <span class="input-group-text text-body"><i class="fas fa-search"
                                     aria-hidden="true"></i></span>
                             <input type="text" class="form-control" placeholder="Type here...">
-                        </div>
+                        </div> --}}
                     </div>
                     <ul class="navbar-nav  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
+                        {{-- <li class="nav-item d-flex align-items-center">
                             <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank"
                                 href="https://www.creative-tim.com/builder?ref=navbar-soft-ui-dashboard">Online
                                 Builder</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item d-flex align-items-center">
                             <a href="/logout"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
@@ -356,12 +356,12 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item px-3 d-flex align-items-center">
+                        {{-- <li class="nav-item px-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0">
                                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
-                        </li>
-                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-bell cursor-pointer"></i>
@@ -444,7 +444,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -461,13 +461,13 @@
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script>,
-                                made with <i class="fa fa-heart"></i> by
+                                with <i class="fa fa-heart"></i> by
                                 <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Selly
                                     Ulima Putri</a>
                                 for a Cashier Web.
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        {{-- <div class="col-lg-6">
                             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                                 <li class="nav-item">
                                     <a href="https://www.creative-tim.com" class="nav-link text-muted"
@@ -486,13 +486,13 @@
                                         target="_blank">License</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </footer>
         </div>
     </main>
-    <div class="fixed-plugin">
+    {{-- <div class="fixed-plugin">
         <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
             <i class="fa fa-cog py-2"> </i>
         </a>
@@ -573,7 +573,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>

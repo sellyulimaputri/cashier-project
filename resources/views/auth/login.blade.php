@@ -22,13 +22,16 @@
 
 <body>
     <div class="card w-15 position-absolute top-50 start-50 translate-middle">
+        <h5 class="mt-5 me-5 ms-5">username : petugas, password : petugas</h5>
+        <h5 class="mb-5 me-5 ms-5">username : administrator, password : administrator</h5>
         <div class="card-body">
             <form method="POST">
                 @csrf
                 <h2>LOGIN</h2>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input class="form-control" id="username" name="username" type="text" aria-describedby="emailHelp">
+                    <input class="form-control" id="username" name="username" type="text"
+                        aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">

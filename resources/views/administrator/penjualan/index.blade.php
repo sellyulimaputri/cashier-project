@@ -9,9 +9,7 @@
                     <div class="d-flex">
                         <input type="text" class="form-control" id="searchInput" placeholder="Cari...">
                     </div>
-                    <a class="btn bg-gradient-primary mt-3 w-12 rtl-only" href="/penjualan-create-administrator">
-                        Tambah Penjualan
-                    </a>
+                    <div class="p"></div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -79,12 +77,12 @@
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $da->petugas->namaPetugas }}</span>
                                             </td>
-                                            <td class="align-middle">
+                                            {{-- <td class="align-middle">
                                                 <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @endif
                                 @endforeach

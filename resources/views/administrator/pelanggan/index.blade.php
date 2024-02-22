@@ -36,7 +36,7 @@
                             Status</th> --}}
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Teepon Pelanggan</th>
+                                        Telepon Pelanggan</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
@@ -73,9 +73,17 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $da->teleponPelanggan }}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-toggle="tooltip" data-original-title="Edit user">
+                                                <a href="{{ route('pelanggan.edit', $da->idPelanggan) }}"
+                                                    class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                    data-original-title="Edit user">
                                                     Edit
+                                                </a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="{{ route('pelanggan.destroy', $da->idPelanggan) }}"
+                                                    class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                    data-original-title="Edit user">
+                                                    Hapus
                                                 </a>
                                             </td>
                                         </tr>

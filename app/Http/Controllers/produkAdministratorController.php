@@ -63,7 +63,10 @@ class produkAdministratorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $pageTitle = 'Produk';
+        $produk = produk::where('idProduk', $id)->first();
+        return view('administrator.produk.update', compact('pageTitle'), ['produk' => $produk]);
     }
 
     /**
@@ -79,6 +82,11 @@ class produkAdministratorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
+        $data = produk::where('idProduk', $id)->first();
+        $data->IsDelete = 1;
+        $data->save();
+
+        return redirect('/dashboard-produk-administrator')->with('success', 'Produk berhasil dihapus');
     }
 }

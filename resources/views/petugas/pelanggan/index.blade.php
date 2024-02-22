@@ -73,9 +73,16 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $da->teleponPelanggan }}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                                <a href="{{ route('pelanggan.petugas.edit', $da->idPelanggan) }}" class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="Edit user">
                                                     Edit
+                                                </a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="{{ route('pelanggan.petugas.destroy', $da->idPelanggan) }}"
+                                                    class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                    data-original-title="Edit user">
+                                                    Hapus
                                                 </a>
                                             </td>
                                         </tr>

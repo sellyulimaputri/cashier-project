@@ -1,4 +1,4 @@
-@extends('partials.navbar')
+@extends('partials.navbarAdministrator')
 @section('section')
     <style>
         .container {
@@ -11,8 +11,10 @@
         <div class="card mb-4 w-50">
             <div class="card-body">
                 <h6>Tambah Produk</h6>
-                <form class="row g-3" action="/dashboard-produk" method="post">
+                <form class="row g-3" action="{{ route('produk.update', ['id' => $produk->idProduk]) }}"
+                    method="post">
                     @csrf
+                    @method('put')
                     {{-- <div class="col-md-6">
                         <label for="inputState" class="form-label">Kategori Batik</label>
                         <select id="inputState" class="form-select" name="kategori_batik" required>
@@ -27,17 +29,17 @@
                     </div> --}}
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Nama Produk</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Hembodi Garnier"
-                            name="nama-produk" required>
+                        <input type="text" class="form-control" value="{{ $produk->namaProduk }}" id="inputAddress" placeholder="Hembodi Garnier"
+                            name="nama_produk" required>
                     </div>
                     <div class="col-12">
                         <label for="formFile" class="form-label">Harga Produk</label>
-                        <input class="form-control" type="text" name="harga-produk" placeholder="20000">
+                        <input class="form-control" type="text" value="{{ $produk->HargaProduk }}" name="harga_produk" placeholder="20000">
                         {{-- <input class="form-control" type="file" name="foto"> --}}
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label">Stok Produk</label>
-                        <input type="text" class="form-control" name="stok-produk" id="inputAddress2" placeholder="400">
+                        <input type="text" class="form-control" value="{{ $produk->stokProduk }}" name="stok_produk" id="inputAddress2" placeholder="400">
                     </div>
                     {{-- <div class="col-md-6">
                         <label for="inputCity" class="form-label">City</label>
