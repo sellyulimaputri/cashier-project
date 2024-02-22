@@ -1,6 +1,6 @@
 @extends('partials.navbar')
 @section('section')
-    <div class="container">
+    <div class="container" style="justify-content: center; display:flex;">
         <div class="card mb-4 w-50">
             <div class="card-body">
                 <h6>Tambah Koleksi</h6>
